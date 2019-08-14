@@ -56,3 +56,4 @@ images/[1~9]*.jpg
 .vscode/
 #ignore judgeServer
 /Core/judgeServer
+migrations/

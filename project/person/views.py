@@ -5,6 +5,7 @@ from django.shortcuts import render
 from django.http import request
 from django.http import HttpResponse
 from django.shortcuts import render
+from person.models import Person
 # Create your views here.
 
 def index(request):
@@ -14,6 +15,7 @@ def data(request):
     name = form_data.get('name')
     age = form_data.get('age')
     birth = form_data.get('birth')
+    Person.objects.create(name=name, age=age, birth=birth)
     print(name)
     print(age)
     print(birth)
