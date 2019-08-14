@@ -18,7 +18,7 @@
                 'birth': birth
             },
             success:function(arg){
-                console.log('ok');
+                res = JSON.parse(arg);
             }, 
             error:function(){
                 console.log("failed"); 
@@ -28,9 +28,15 @@
     </script>
 </head>
 <body>
-    <label>name</label><input id='name'><br>
+    <!-- <label>name</label><input id='name'><br>
     <label>age</label><input id='age'><br>
     <label>birth</label><input id='birth'><br>
-    <button onclick="submitData()">emit</button>
+    <button onclick="submitData()">submit</button> -->
+    <form method="POST" action="/emit">
+        <label>name</label><input name='name'><br>
+        <label>age</label><input name='age'><br>
+        <label>birth</label><input name='birth'><br>
+        <button type="submit">submit</button>
+    </form>
 </body>
 </html>
