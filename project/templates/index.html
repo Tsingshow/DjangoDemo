@@ -1,0 +1,36 @@
+<html>
+<head>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+    function submitData() {
+        console.log('here');
+        var name = $('#name').val();
+        var age = $('#age').val();
+        var birth = $('#birth').val();
+        console.log('here'+ birth);
+
+        $.ajax({
+            url:"/data/",
+            type:"POST",
+            data:{
+                'name': name,
+                'age': age,
+                'birth': birth
+            },
+            success:function(arg){
+                console.log('ok');
+            }, 
+            error:function(){
+                console.log("failed"); 
+            } 
+        });
+    }
+    </script>
+</head>
+<body>
+    <label>name</label><input id='name'><br>
+    <label>age</label><input id='age'><br>
+    <label>birth</label><input id='birth'><br>
+    <button onclick="submitData()">emit</button>
+</body>
+</html>
